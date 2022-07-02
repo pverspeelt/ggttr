@@ -11,7 +11,7 @@ geom_ma(
   na.rm = TRUE,
   show.legend = NA,
   inherit.aes = TRUE,
-  ma_fun = "SMA",
+  ma_type = "SMA",
   n = 10,
   wilder = FALSE,
   ratio = NULL,
@@ -58,9 +58,9 @@ rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
 the default plot specification, e.g. \code{\link[ggplot2:borders]{borders()}}.}
 
-\item{ma_fun}{The function used to calculate the moving average. The default
-is "SMA". Possible options are: SMA, EMA, DEMA, WMA, ZLEMA and HMA. See \code{?TTR::SMA}
-for more information.}
+\item{ma_type}{Which type of moving average will be used calculate the moving
+average. The default is "SMA". Possible options are: SMA, EMA, DEMA, WMA, ZLEMA
+and HMA. See \code{\link[TTR:MovingAverages]{TTR::SMA()}} for more information.}
 
 \item{n}{Number of periods to average over. Must be between 1 and \code{nrow(x)}, inclusive.
 Defaults to 10.}
@@ -90,6 +90,6 @@ data(aapl)
 
 ggplot(aapl, aes(x = date, y = adjusted)) + 
   geom_line() +
-  geom_ma(ma_fun = "EMA")
+  geom_ma(ma_type = "EMA")
 
 }

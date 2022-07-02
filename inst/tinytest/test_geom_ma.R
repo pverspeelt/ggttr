@@ -2,9 +2,9 @@ library(ggplot2)
 data(aapl)
 p1 <- ggplot(aapl, aes(x = date, y = adjusted)) + 
   geom_line() +
-  geom_ma(ma_fun = "EMA") 
+  geom_ma(ma_type = "EMA") 
 
-test_ma_values <- list(ma_fun = "EMA",
+test_ma_values <- list(ma_type = "EMA",
                        n = 10,
                        wilder = FALSE,
                        ratio = NULL,

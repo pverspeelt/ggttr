@@ -1,9 +1,9 @@
 #' Plot Moving Averages
 #'
 #' @inheritParams ggplot2::geom_line
-#' @param ma_fun The function used to calculate the moving average. The default
-#' is "SMA". Possible options are: SMA, EMA, DEMA, WMA, ZLEMA and HMA. See `?TTR::SMA`
-#' for more information.
+#' @param ma_type Which type of moving average will be used calculate the moving 
+#' average. The default is "SMA". Possible options are: SMA, EMA, DEMA, WMA, ZLEMA 
+#' and HMA. See [TTR::SMA()] for more information.
 #' @param n Number of periods to average over. Must be between 1 and `nrow(x)`, inclusive.
 #' Defaults to 10.
 #' @param wilder logical; if `TRUE`, a Welles Wilder type EMA will be calculated. 
@@ -22,14 +22,14 @@
 #' 
 #' ggplot(aapl, aes(x = date, y = adjusted)) + 
 #'   geom_line() +
-#'   geom_ma(ma_fun = "EMA")
+#'   geom_ma(ma_type = "EMA")
 #' 
 geom_ma <- function(mapping = NULL, data = NULL, 
                     position = "identity", 
                     na.rm = TRUE, 
                     show.legend = NA, 
                     inherit.aes = TRUE,
-                    ma_fun = "SMA",
+                    ma_type = "SMA",
                     n = 10, 
                     wilder = FALSE, 
                     ratio = NULL, 
@@ -43,7 +43,7 @@ geom_ma <- function(mapping = NULL, data = NULL,
   ggplot2::layer(
     stat = stat_ma, data = data, mapping = mapping, geom = geom_ma_line, 
     position = position, show.legend = show.legend, inherit.aes = inherit.aes,
-    params = list(ma_fun = ma_fun, n = n, wilder = wilder, ratio = ratio, v = v, wts = wts,
+    params = list(ma_type = ma_type, n = n, wilder = wilder, ratio = ratio, v = v, wts = wts,
                   na.rm = na.rm, ...)
   )
 }
@@ -55,7 +55,7 @@ stat_ma <- ggplot2::ggproto(
   required_aes = c("x", "y"),
   compute_group = function(data,
                            scales,
-                           ma_fun = "SMA",
+                           ma_type = "SMA",
                            n = 10,
                            wilder = FALSE,
                            ratio = NULL,
@@ -64,7 +64,7 @@ stat_ma <- ggplot2::ggproto(
     dat <- data.frame(x = data$x)
     dat$y <- switch_ma(
       x = data$y,
-      ma_fun = ma_fun,
+      ma_type = ma_type,
       n = n,
       wilder = wilder,
       ratio = ratio,
@@ -90,16 +90,16 @@ geom_ma_line <- ggplot2::ggproto(
 
 
 # switch to the selected MA function
-switch_ma <- function(ma_fun, x, n, wilder, ratio, v, wts) {
+switch_ma <- function(ma_type, x, n, wilder, ratio, v, wts) {
 # TODO add message in this geom to point to the volume and ALMA
-  switch(ma_fun,
+  switch(ma_type,
          SMA = TTR::SMA(x = x, n = n),
          EMA = TTR::EMA(x = x, n = n, wilder = wilder, ratio = ratio),
          DEMA = TTR::DEMA(x = x, n = n, v = v, wilder = wilder, ratio = ratio),
          WMA = TTR::WMA(x = x, n = n, wts = 1:n),
          ZLEMA = TTR::ZLEMA(x = x, n = n, ratio = ratio),
          HMA = TTR::HMA(x = x, n = n),
-         stop(sprintf("Unsupported moving average: %s", ma_fun), call. = FALSE)
+         stop(sprintf("Unsupported moving average: %s", ma_type), call. = FALSE)
   )
 }
 
