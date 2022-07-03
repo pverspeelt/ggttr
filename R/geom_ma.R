@@ -1,7 +1,10 @@
 #' Plot Moving Averages
+#' 
+#' The `geom_ma()` function plots a moving average on plot. You can choose from several
+#' moving averages. The details of each moving average can be found in the TTR package. 
 #'
 #' @inheritParams ggplot2::geom_line
-#' @param ma_type Which type of moving average will be used calculate the moving 
+#' @param ma_type Which type of moving average will be used to calculate the moving 
 #' average. The default is "SMA". Possible options are: SMA, EMA, DEMA, WMA, ZLEMA 
 #' and HMA. See [TTR::SMA()] for more information.
 #' @param n Number of periods to average over. Must be between 1 and `nrow(x)`, inclusive.
