@@ -68,8 +68,8 @@ geom_bbs <- function(mapping = NULL, data = NULL,
   ma <- ggplot2::layer(
     stat = stat_bb_ma, geom = geom_bbma_line, data = data, mapping = mapping,
     position = position, show.legend = show.legend, inherit.aes = inherit.aes,
-    params = list(ma_type = ma_type, n = n, sd = sd, na.rm = na.rm,
-                  color = colour_ma, alpha = NA, fill = fill, ...)
+    params = list(ma_type = ma_type, n = n, wilder = wilder, sd = sd, 
+                  na.rm = na.rm, color = colour_ma, alpha = NA, fill = fill, ...)
   )
 
   # Combine the ribbon and MA into 1 return
