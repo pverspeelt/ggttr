@@ -2,4 +2,6 @@
 
 export(geom_bbs)
 export(geom_donchian)
+export(geom_envelope)
+export(geom_keltner)
 export(geom_ma)
