@@ -8,10 +8,13 @@ Description: The purpose of ggttr is to add technical trading rules to ggplot2. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
 Suggests: tinytest
 Imports: 
     ggplot2,
+    patchwork,
+    rlang,
+    scales,
     TTR
 Depends: 
     R (>= 2.10)
