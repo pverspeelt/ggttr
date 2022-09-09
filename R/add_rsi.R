@@ -33,7 +33,7 @@ add_rsi <- function(plot,
   plot <- plot + 
     ggplot2::theme(axis.text.x = ggplot2::element_blank())
   
-  rsi_plot <- ggplot2::ggplot(plot$data, ggplot2::aes(x = .data[[plot$labels$x]], y = rsi)) + 
+  rsi_plot <- ggplot2::ggplot(plot$data, ggplot2::aes(x = .data[[plot$labels$x]], y = .data$rsi)) + 
     ggplot2::geom_line(na.rm = TRUE) + 
     ggplot2::geom_hline(yintercept = 30, linetype = 2, color = "darkseagreen") +
     ggplot2::geom_hline(yintercept = 70, linetype = 2, color = "orangered") +
