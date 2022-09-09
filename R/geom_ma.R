@@ -1,6 +1,6 @@
 #' Plot Moving Averages
 #' 
-#' The `geom_ma()` function plots a moving average on plot. You can choose from several
+#' The `geom_ma()` function plots a moving average on a financial chart. You can choose from several
 #' moving averages. The details of each moving average can be found in the TTR package. 
 #'
 #' @inheritParams ggplot2::geom_line

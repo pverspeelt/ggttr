@@ -2,7 +2,7 @@
 #' 
 #' `add_macd()` will add a Moving Average Convergence Divergence indicator sub plot below a financial chart.
 #'
-#' @param plot Needs to be a ggplot2 plot containing stock
+#' @param plot Needs to be a ggplot2 financial plot containing stock prices.
 #' @param ma_type Which type of moving average will be used to calculate the macd. 
 #' The default is "EMA". Possible options are: SMA or EMA.
 #' @param fast Number of periods for fast moving average.

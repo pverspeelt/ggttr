@@ -14,7 +14,7 @@ add_macd(
 )
 }
 \arguments{
-\item{plot}{Needs to be a ggplot2 plot containing stock}
+\item{plot}{Needs to be a ggplot2 financial plot containing stock prices.}
 
 \item{ma_type}{Which type of moving average will be used to calculate the macd.
 The default is "EMA". Possible options are: SMA or EMA.}

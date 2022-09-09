@@ -80,7 +80,7 @@ often aesthetics, used to set an aesthetic to a fixed value, like
 to the paired geom/stat.}
 }
 \description{
-The \code{geom_ma()} function plots a moving average on plot. You can choose from several
+The \code{geom_ma()} function plots a moving average on a financial chart. You can choose from several
 moving averages. The details of each moving average can be found in the TTR package.
 }
 \examples{
