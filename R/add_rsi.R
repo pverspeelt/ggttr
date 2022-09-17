@@ -5,6 +5,10 @@
 #'
 #' @return Plots a patchwork object.
 #' @export
+#' 
+#' @seealso 
+#' More information about the [RSI](https://www.investopedia.com/terms/r/rsi.asp) 
+#' can be found on investopedia.
 #'
 #' @examples
 #' library(ggplot2)
