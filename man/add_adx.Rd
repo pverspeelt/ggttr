@@ -11,9 +11,9 @@ add_adx(plot, high = "high", low = "low", n = 14, ma_type = "EMA")
 
 \item{high}{The high column. Default is "high".}
 
-\item{low}{The low columns. Defalut is "low".}
+\item{low}{The low column. Default is "low".}
 
-\item{n}{Number of periods for the ATR calculation. Default is 14.}
+\item{n}{Number of periods for the ADX calculation. Default is 14.}
 
 \item{ma_type}{Which type of moving average will be used to calculate the ATR.
 The default is "EMA". Possible options are: SMA or EMA.}

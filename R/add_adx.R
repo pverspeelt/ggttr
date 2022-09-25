@@ -6,8 +6,8 @@
 #'
 #' @param plot Needs to be a ggplot2 financial plot containing stock prices.
 #' @param high The high column. Default is "high".
-#' @param low The low columns. Defalut is "low".
-#' @param n Number of periods for the ATR calculation. Default is 14.
+#' @param low The low column. Default is "low".
+#' @param n Number of periods for the ADX calculation. Default is 14.
 #' @param ma_type Which type of moving average will be used to calculate the ATR. 
 #' The default is "EMA". Possible options are: SMA or EMA.
 #'
