@@ -3,6 +3,7 @@
 export(add_adx)
 export(add_aroon)
 export(add_atr)
+export(add_cci)
 export(add_macd)
 export(add_momentum)
 export(add_roc)
